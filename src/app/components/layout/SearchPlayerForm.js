@@ -21,7 +21,7 @@ const SearchPlayerForm = ({ onSave }) => {
           })
         }
       >
-        <div className="grid grid-cols-6 grid-rows-5 justify-center items-center border-white border-2 rounded-lg pr-2 pl-2 pt-2">
+        <div className="grid grid-cols-6 grid-rows-5 justify-center items-center rounded-lg pr-2 pl-2 pt-2">
           <div className="col-span-6">
             <ReactFlagsSelect
               selected={filtres.countryCode}
@@ -73,7 +73,7 @@ const SearchPlayerForm = ({ onSave }) => {
           </div>
           <div className="col-start-4 row-start-2 font-extrabold">Team</div>
           <div className="col-span-2 col-start-5 row-start-2">
-            <fieldset className="flex max-w-md gap-4">
+            <fieldset className="flex max-w-md gap-4 ">
               <div className="flex items-center gap-2">
                 <input
                   type="radio"
@@ -95,7 +95,7 @@ const SearchPlayerForm = ({ onSave }) => {
                   onChange={() => setFiltres({ ...filtres, team: null })}
                   value="Non"
                 />
-                <label htmlFor="noTeam">Non</label>
+                <label htmlFor="noTeam" >Non</label>
               </div>
               <div className="flex items-center gap-2">
                 <input
@@ -116,7 +116,7 @@ const SearchPlayerForm = ({ onSave }) => {
             <div className="flex max-w-md gap-1">
               <input
                 type="number"
-                className="dark:text-black"
+                className="dark:text-white"
                 value={filtres.age || 0}
                 onChange={(e) =>
                   setFiltres({ ...filtres, age: parseInt(e.target.value) })
@@ -176,7 +176,7 @@ const SearchPlayerForm = ({ onSave }) => {
           <div className="flex max-w-md gap-1">
           <input
               type="number"
-              className="dark:text-black"
+              className="dark:text-white"
               value={filtres.major || 0}
               onChange={(e) =>
                 setFiltres({ ...filtres, major: parseInt(e.target.value) })

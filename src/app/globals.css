@@ -22,7 +22,7 @@ input[type="text"]:disabled {
     @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
 }
 label{
-    @apply text-gray-500 text-sm leading-tight;
+    @apply text-gray-500 text-sm leading-tight dark:text-white;
 }
 label + input{
     margin-top: -2px;
@@ -50,11 +50,12 @@ div.tabs > *.active{
 
 input[type="radio"].sing-comparison {
     display: none;
-  }
-  input[type="radio"].sing-comparison + label {
+}
+
+input[type="radio"].sing-comparison + label {
     padding: 0.3rem 0.5rem;
-    border: 1px dashed #ccc;
-  }
-  input[type="radio"].sing-comparison:checked + label {
-    border: 1px solid #000;
-  }
+}
+
+input[type="radio"].sing-comparison:checked + label {
+    @apply dark:border-red-100 dark:border border border-black
+}

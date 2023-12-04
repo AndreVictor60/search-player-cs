@@ -28,12 +28,12 @@ const CardPlayer = (player) => {
           />
           {nickname}
         </h5>
-        <p className="font-normal text-gray-700">{name}</p>
+        <p className="font-normal text-gray-800">{name}</p>
         <hr />
 
-        <ul>
+        <ul className="dark:text-gray-700">
           <li>
-            <span className="font-extrabold">Age </span> :{" "}
+            <span className=" font-extrabold">Age </span> :{" "}
             {new Date().getFullYear() - new Date(birthDate).getFullYear()}
           </li>
           <li>

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 const Header = () => {
 
@@ -11,6 +12,9 @@ const Header = () => {
         <Link className="text-primary font-semibold text-2xl" href={"/"}>
           SeekPlayer
         </Link>
+      </nav>
+      <nav className="flex items-center gap-4 font-semibold text-gray-500">
+        <ThemeSwitcher />
       </nav>
     </header>
   );

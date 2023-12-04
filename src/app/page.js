@@ -10,11 +10,8 @@ export default function Home() {
   // Fonction de filtrage
   const filtrerDonnees = (ev, data) => {
     ev.preventDefault();
-
     const { filtres } = data;
-    console.log("Les filtres : ", filtres);
     const donneesTrie = [...localData];
-
     const donneesFiltrees = donneesTrie.filter((element) => {
       const agePlayer = getAge(element.birthDate);
       const filtreMajor = () => {
@@ -81,7 +78,7 @@ export default function Home() {
   return (
     <>
       <div className="container mx-auto ">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl text-center">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Liste des joueurs ({filteredData?.length})
         </h1>
         <SearchPlayerForm onSave={filtrerDonnees} />
