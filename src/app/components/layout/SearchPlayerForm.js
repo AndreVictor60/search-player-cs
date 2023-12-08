@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactFlagsSelect from "react-flags-select";
 
-const SearchPlayerForm = ({ onSave }) => {
+const SearchPlayerForm = ({ onSave, getCountries }) => {
   const [filtres, setFiltres] = useState({
     countryCode: "",
     team: "",
@@ -29,6 +29,7 @@ const SearchPlayerForm = ({ onSave }) => {
               className="dark:text-black menu-flags"
               placeholder="Selectionner un pays"
               searchable
+              countries={getCountries}
             />
           </div>
           <div className="row-start-2 font-extrabold">Role</div>
@@ -95,7 +96,7 @@ const SearchPlayerForm = ({ onSave }) => {
                   onChange={() => setFiltres({ ...filtres, team: null })}
                   value="Non"
                 />
-                <label htmlFor="noTeam" >Non</label>
+                <label htmlFor="noTeam">Non</label>
               </div>
               <div className="flex items-center gap-2">
                 <input
@@ -173,15 +174,15 @@ const SearchPlayerForm = ({ onSave }) => {
             Major apparution
           </div>
           <div className="col-span-2 col-start-5 row-start-3">
-          <div className="flex max-w-md gap-1">
-          <input
-              type="number"
-              className="dark:text-white"
-              value={filtres.major || 0}
-              onChange={(e) =>
-                setFiltres({ ...filtres, major: parseInt(e.target.value) })
-              }
-            />
+            <div className="flex max-w-md gap-1">
+              <input
+                type="number"
+                className="dark:text-white"
+                value={filtres.major || 0}
+                onChange={(e) =>
+                  setFiltres({ ...filtres, major: parseInt(e.target.value) })
+                }
+              />
 
               <div className="flex items-center gap-2">
                 <input
@@ -228,7 +229,6 @@ const SearchPlayerForm = ({ onSave }) => {
                 <label htmlFor="superiorM">&gt;</label>
               </div>
             </div>
-
           </div>
           <div className="col-span-2 col-start-5 row-start-4">
             <button type="submit" className="w-full  text-white">

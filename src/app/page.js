@@ -1,13 +1,42 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import localData from "@/app/data/db_player.json";
+import countriesJSON from "@/app/data/countries.json";
 import CardPlayer from "./components/cards/CardPlayer";
 import SearchPlayerForm from "./components/layout/SearchPlayerForm";
 import getAge from "./utils/functions";
+import { ContinentForm } from "./components/layout/ContinentForm";
 
 export default function Home() {
   const [filteredData, setFilteredData] = useState([]);
-  // Fonction de filtrage
+  const [countries, setCountries] = useState([]);
+  const [selectedContinent, setSelectedContinent] = useState('All');
+  useEffect(() => {
+    setCountries(getListPlayerByRegion(countriesJSON, "All"));
+  }, [setCountries]);
+
+  const getListPlayerByRegion = (jsonData, continentName) => {
+    try {
+      const continent = jsonData.regions.find(
+        (continent) => continent.name === continentName
+      );
+      if (continent) {
+        return continent.countries.map((country) => country.code);
+      } else {
+        console.error(`Continent '${continentName}' not found in the data.`);
+        return [];
+      }
+    } catch (error) {
+      console.error("Error parsing JSON data:", error);
+      return [];
+    }
+  };
+
+  const handleRegion = (region, data) => {
+    setCountries(getListPlayerByRegion(countriesJSON, region));
+    setSelectedContinent(region);
+  };
+
   const filtrerDonnees = (ev, data) => {
     ev.preventDefault();
     const { filtres } = data;
@@ -81,7 +110,10 @@ export default function Home() {
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Liste des joueurs ({filteredData?.length})
         </h1>
-        <SearchPlayerForm onSave={filtrerDonnees} />
+        <div className="flex justify-center">
+          <ContinentForm setSelectedContinent={handleRegion} selectedContinent={selectedContinent} />
+        </div>
+        <SearchPlayerForm onSave={filtrerDonnees} getCountries={countries} />
       </div>
 
       <div className="container pb-10 px-4 pt-10">
