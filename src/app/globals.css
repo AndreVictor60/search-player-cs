@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Gayathri:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bayon&display=swap");
+@layer base{
+    body {
+        @apply dark:bg-backgroundDark bg-backgroundLigth
+    }
+}
+
+
 section.hero{
     @apply block md:grid;
     grid-template-columns: .4fr .6fr;
@@ -32,7 +41,7 @@ button, .button{
     @apply border border-gray-300 rounded-xl px-6 py-2;
 }
 button[type="submit"], .submit, button.primary{
-    @apply border-primary bg-primary text-white;
+    @apply border-primary bg-SolidColorDark text-white;
 }
 button[type="submit"]:disabled, .submit:disabled{
     @apply cursor-not-allowed bg-red-400;

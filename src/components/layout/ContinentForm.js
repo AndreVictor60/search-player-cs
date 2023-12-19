@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import countries from "@/app/data/countries.json";
+import countries from "../../data/countries.json";
 
 export const ContinentForm = ({ onSave,setSelectedContinent,selectedContinent }) => {
   const [region, setRegion] = useState("All");

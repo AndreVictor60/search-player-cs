@@ -7,9 +7,18 @@ module.exports = {
   ],
   darkMode: ["class"],
   theme: {
-    extend: {     
+    extend: {
+      fontFamily: {
+        gayathri: ['Gayathri'],
+        bayon: ['Bayon']
+      },    
       colors: {
-        primary: '#C12704',
+        primary: "#EC6142",
+        textLigth: '#D13415',
+        textDark: '#FF977D',
+        backgroundDark: "#181111",
+        backgroundLigth: "#FFFCFC",
+        SolidColorDark: '#E54D2E',
       },
     },
   },
