@@ -1,5 +1,6 @@
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
+import getAge from "../../utils/functions";
 
 const CardPlayer = (player) => {
   const {
@@ -34,7 +35,7 @@ const CardPlayer = (player) => {
         <ul className="dark:text-gray-700">
           <li>
             <span className=" font-extrabold">Age </span> :{" "}
-            {new Date().getFullYear() - new Date(birthDate).getFullYear()}
+            {getAge(birthDate)}
           </li>
           <li>
             <span className="font-extrabold">Weapon </span> : {mostUsedWeapon}

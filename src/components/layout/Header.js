@@ -35,7 +35,7 @@ const Header = () => {
           {links.map(({ id, link, to }) => (
             <li
               key={id}
-              className="nav-links px-4 cursor-pointer capitalize font-medium text-textLigth dark:text-textDark hover:scale-105 hover:text-white duration-200 link-underline"
+              className="nav-links px-4 cursor-pointer capitalize font-medium text-textLigth dark:text-textDark hover:scale-105 dark:hover:text-white duration-200 link-underline"
             >
               <Link href={to}>{link}</Link>
             </li>
@@ -71,16 +71,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-        <Link className="text-primary font-semibold text-2xl" href={"/"}>
-          Home
-        </Link>
-        <Link className="text-primary font-semibold text-2xl" href={"/find-player"}>
-          Find Player
-        </Link>
-      </nav>
-      <nav className="flex items-center gap-4 font-semibold text-gray-500">
-        <ThemeSwitcher />
-      </nav>
-*/
