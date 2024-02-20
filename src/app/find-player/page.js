@@ -53,6 +53,8 @@ const findPlayerPage = () => {
             return element.majorsAttended > filtres.major;
           case "lower":
             return element.majorsAttended < filtres.major;
+          case "equal":
+              return element.majorsAttended === filtres.major;
           default:
             return element.majorsAttended === filtres.major;
         }
