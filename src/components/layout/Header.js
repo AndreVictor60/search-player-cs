@@ -19,6 +19,11 @@ const Header = () => {
       link: "Find player",
       to: "/find-player",
     },
+    {
+      id: 3,
+      link: "Find name",
+      to: "/find-name"
+    }
   ];
   return (
     <header className="flex items-center justify-between">
